@@ -9,4 +9,4 @@ import { Component } from '@angular/core';
   templateUrl: './user.component.html',
   styles: ``,
 })
-export class UserComponent { }
+export default class UserComponent { }
