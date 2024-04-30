@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { routes } from '../../app.routes';
 
 @Component({
@@ -7,6 +8,7 @@ import { routes } from '../../app.routes';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule
   ],
   templateUrl: './sidemenu.component.html',
   styleUrl: './sidemenu.component.css',
