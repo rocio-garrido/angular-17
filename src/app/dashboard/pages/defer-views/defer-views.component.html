@@ -1,3 +1,5 @@
+<app-title title="Defer Views / Blocks "></app-title>
+
 <section class="grid grid-cols-1">
   @defer() {
   <app-heavy-loaders-slow cssClass="bg-blue-500" />
@@ -7,7 +9,7 @@
   >
     Cargando...
   </p>
-  } @defer() {
+  } @defer(on idle) {
   <app-heavy-loaders-slow cssClass="bg-green-500" />
   } @placeholder {
   <p
@@ -15,7 +17,7 @@
   >
     Cargando...
   </p>
-  } @defer() {
+  } @defer(on viewport) {
   <app-heavy-loaders-slow cssClass="bg-purple-500" />
   } @placeholder {
   <p
