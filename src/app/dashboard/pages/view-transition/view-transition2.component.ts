@@ -12,16 +12,17 @@ import { TitleComponent } from '@shared/title/title.component';
   <app-title title="View Transition"> 
   </app-title>
 
-  <section class="flex justify-start">
+  <section class="flex justify-end">
 
     <img 
     srcset="https://picsum.photos/id/237/200/300"
     alt="Picsum"
     width="200"
     height="300"
+    style="view-transition-name: hero1"
     />
 
-    <div class="bg-blue-500 w-56 h-56">
+    <div class="fixed bottom-16 right-10 bg-blue-800 w-32 h-32 rounded" style="view-transition-name: hero2">
 
     </div>
   </section>
