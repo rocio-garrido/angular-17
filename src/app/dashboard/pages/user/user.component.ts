@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { switchMap } from 'rxjs';
     CommonModule, TitleComponent
   ],
   template: `
-  <app-title title="Usuaria"></app-title>
+  <app-title [title]="titleLabel()"></app-title>
 
   @if(user()) {
     <section>
@@ -39,6 +39,15 @@ export default class UserComponent {
 
   private route = inject(ActivatedRoute);
   private usersService = inject(UsersService);
+
+  public titleLabel = computed(() => {
+    if (this.user()) {
+      return `Información del usuario: ${this.user()?.first_name} ${this.user()?.last_name} `
+    }
+
+    return 'Información del usuario';
+
+  });
 
   // public user = signal<User | undefined>(undefined)
 
